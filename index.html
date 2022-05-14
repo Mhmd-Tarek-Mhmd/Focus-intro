@@ -47,6 +47,7 @@
       button {
         border: none;
         font: inherit;
+        cursor: pointer;
         background: none;
       }
       ul {
@@ -200,6 +201,134 @@
           gap: 18px;
         }
       }
+
+      /*
+        Main area
+      */
+
+      main {
+        height: calc(100vh - 75px);
+      }
+      .hero img {
+        max-width: 100%;
+      }
+      .hero .wrapper {
+        display: grid;
+      }
+      @media (max-width: 991px) {
+        .hero {
+          text-align: center;
+          padding-bottom: 50px;
+        }
+        .hero .wrapper {
+          gap: 48px;
+          padding: 0 16px;
+          margin-top: 47px;
+        }
+      }
+      @media (min-width: 992px) {
+        main {
+          display: grid;
+          padding: 0 16px;
+          min-height: 650px;
+          align-items: center;
+          height: calc(100vh - 126px);
+        }
+        .hero {
+          gap: 10%;
+          display: grid;
+          justify-content: center;
+          grid-template-columns: minmax(0, 512px) minmax(0, 480px);
+        }
+        .hero .wrapper {
+          gap: 108px;
+          grid-row: 1/2;
+          align-self: flex-end;
+        }
+      }
+
+
+      /* [1] Txt */
+
+      @media (max-width: 500px) {
+        .hero .txt {
+          padding: 0 3px;
+          font-size: 16px;
+        }
+      }
+      .hero .txt h1 {
+        color: var(--black);
+      }
+      @media (min-width: 992px) {
+        .hero .txt h1 {
+          font-size: 4em;
+          min-width: 531px;
+        }
+      }
+      @media (min-width: 1200px) {
+        .hero .txt h1 {
+          font-size: 4.5em;
+        }
+      }
+      .hero .txt p {
+        margin: 51px 0;
+        max-width: 423px;
+        line-height: 1.5;
+      }
+      .hero .txt a {
+        height: 56px;
+        width: 163px;
+        display: grid;
+        place-items: center;
+        border-radius: 10px;
+        color: var(--white);
+        border: 1px solid var(--black);
+        background-color: var(--black);
+        transition: 0.3s background-color;
+        will-change: color, background-color;
+      }
+      .hero .txt a:focus-visible,
+      .hero .txt a:hover {
+        color: var(--black);
+        background-color: var(--white);
+      }
+      @media (max-width: 991px) {
+        .hero .txt h1 {
+          font-size: 2em;
+        }
+        .hero .txt h1 br {
+          display: none;
+        }
+        .hero .txt p {
+          max-width: 334px;
+          margin: 20px auto 24px;
+        }
+        .hero .txt a {
+          margin: auto;
+          height: 48px;
+          width: 136px;
+        }
+      }
+
+      /* [2] Clinets */
+
+      .hero .clinets {
+        gap: 40px;
+        display: flex;
+        align-items: center;
+      }
+      @media (max-width: 991px) {
+        .hero .clinets {
+          gap: 30px;
+          justify-content: center;
+        }
+      }
+      @media (max-width: 500px) {
+        .hero .clinets {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+        }
+      }
     </style>
   </head>
   <body>
@@ -292,6 +421,38 @@
         </ul>
       </div>
     </nav>
+
+    <!--
+      Main area
+    -->
+
+    <main>
+      <header class="hero" aria-label="Intro">
+        <picture aria-hidden="true">
+          <source srcset="images/image-hero-mobile.png" media="(max-width: 991px)" />
+          <source srcset="images/image-hero-desktop.png" media="(min-width: 992px)" />
+          <img aria-hidden="true" src="images/image-hero-mobile.png" alt="" />
+        </picture>
+
+        <div class="wrapper">
+          <section class="txt">
+            <h1>Make <br />remote work</h1>
+            <p>
+              Get your team in sync, no matter your location. Streamline
+              processes, create team rituals, and watch productivity soar.
+            </p>
+            <a href="/">Learn more</a>
+          </section>
+
+          <section class="clinets" aria-label="Clients">
+            <img src="images/clients/databiz.svg" aria-label="Databiz Company" />
+            <img src="images/clients/audiophile.svg" aria-label="Audio Phile Company" />
+            <img src="images/clients/meet.svg" aria-label="Meet Company" />
+            <img src="images/clients/maker.svg" aria-label="Maker Company" />
+          </section>
+        </div>
+      </header>
+    </main>
 
     <!--
       Logic area
