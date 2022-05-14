@@ -5,4 +5,4 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
 ## Links
 
 - Live Site [URL](https://mhmd-tarek-mhmd.github.io/Focus-intro/)
-- Solution [URL](https://www.frontendmentor.io/solutions/focus-intro-)
+- Solution [URL](https://www.frontendmentor.io/solutions/focus-intro-Skxx_UT89)
